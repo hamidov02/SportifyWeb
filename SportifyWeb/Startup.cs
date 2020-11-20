@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SportifyWeb.Data;
 
 namespace SportifyWeb
 {
@@ -18,7 +20,13 @@ namespace SportifyWeb
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddDbContext<SportifyContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddControllersWithViews();
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
