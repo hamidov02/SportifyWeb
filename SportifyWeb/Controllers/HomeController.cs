@@ -29,6 +29,12 @@ namespace SportifyWeb.Controllers
             return View();
         }
 
+        public IActionResult Seed()
+        {
+
+            return Ok("Seed");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

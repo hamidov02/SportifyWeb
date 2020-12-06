@@ -14,7 +14,7 @@ namespace SportifyWeb.Models
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Email { get; set; }
-        public Adress adress { get; set; }
+        public Address adress { get; set; }
 
         [ForeignKey("UserID")]
         public User user { get; set; }

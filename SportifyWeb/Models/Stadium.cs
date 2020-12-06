@@ -21,7 +21,7 @@ namespace SportifyWeb.Models
         public User User { get; set; }
 
         [ForeignKey("AdressID")]
-        public Adress adress { get; set; }
+        public Address adress { get; set; }
 
         public ICollection<StadiumActivity> StadiumActivities { get; set; }
     }

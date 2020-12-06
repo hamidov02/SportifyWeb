@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SportifyWeb.Models
 {
     [Table("Adress")]
-    public class Adress
+    public class Address
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
