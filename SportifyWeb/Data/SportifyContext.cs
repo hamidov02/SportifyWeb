@@ -15,7 +15,7 @@ namespace SportifyWeb.Data
         {
 
         }
-        public DbSet<Adress> Adresses { get; set; }
+        public DbSet<Address> Adresses { get; set; }
         public DbSet<ContactInfo> ContactInfos { get; set; }
         public DbSet<Stadium> Stadiums { get; set; }
         public DbSet<User> Users { get; set; }
@@ -30,7 +30,7 @@ namespace SportifyWeb.Data
             modelBuilder.Entity<User>().ToTable("User");
             modelBuilder.Entity<Role>().ToTable("Role");
             modelBuilder.Entity<ContactInfo>().ToTable("ContactInfo");
-            modelBuilder.Entity<Adress>().ToTable("Adress");
+            modelBuilder.Entity<Address>().ToTable("Adress");
             modelBuilder.Entity<Stadium>().ToTable("Stadium");
             modelBuilder.Entity<CreditCard>().ToTable("CreditCard");
             modelBuilder.Entity<StadiumActivity>().ToTable("StadiumActivity");

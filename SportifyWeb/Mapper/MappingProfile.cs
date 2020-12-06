@@ -15,7 +15,7 @@ namespace SportifyWeb.Mapper
         {
             CreateMap<User, UserResource>();
             CreateMap<Stadium, StadiumResource>();
-            CreateMap<Adress, AdressResource>();
+            CreateMap<Address, AdressResource>();
             CreateMap<StadiumActivity, StadiumActivityResource>();
             CreateMap<CreditCard, CreditCardResource>();
             CreateMap<Payment, PaymentResource>();
