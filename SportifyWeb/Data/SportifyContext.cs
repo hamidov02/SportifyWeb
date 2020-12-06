@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using SportifyWeb.Models;
 using System;
@@ -10,14 +11,15 @@ namespace SportifyWeb.Data
 {
     public class SportifyContext: DbContext
     {
-        public SportifyContext(DbContextOptions<SportifyContext> options) : base(options)
+        public SportifyContext(DbContextOptions options) : base(options)
         {
+
         }
-        public DbSet<User> Users { get; set; }
         public DbSet<Adress> Adresses { get; set; }
-        public DbSet<Role> Roles { get; set; }
         public DbSet<ContactInfo> ContactInfos { get; set; }
         public DbSet<Stadium> Stadiums { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<StadiumActivity> StadiumActivities { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Payment> Payments { get; set; }
@@ -35,5 +37,9 @@ namespace SportifyWeb.Data
             modelBuilder.Entity<Order>().ToTable("Order");
             modelBuilder.Entity<Payment>().ToTable("Payment");
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+        }
+
     }
 }
