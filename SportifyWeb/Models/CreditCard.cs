@@ -12,7 +12,8 @@ namespace SportifyWeb.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         public string CardNumber { get; set; }
-        public DateTime ExpireDate { get; set; }
+        public int ExpireMonth { get; set; }
+        public int ExpireYear { get; set; }
         public string HolderName { get; set; }
 
         [ForeignKey("UserID")]

@@ -11,12 +11,14 @@ namespace SportifyWeb.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+        public string Name { get; set; }
+        public string Company { get; set; }
         public string Sport { get; set; }
         public double Price { get; set; }
-        public double Size { get; set; }
+        public double Area { get; set; }
 
         [ForeignKey("UserID")]
-        public User user { get; set; }
+        public User User { get; set; }
 
         [ForeignKey("AdressID")]
         public Adress adress { get; set; }

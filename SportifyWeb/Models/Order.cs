@@ -11,14 +11,14 @@ namespace SportifyWeb.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
-        public int Status { get; set; }
+        public string Status { get; set; }
         public DateTime InsertDate { get; set; }
 
         [ForeignKey("StadiumActivityID")]
         public StadiumActivity stadiumActivity { get; set; }
 
         [ForeignKey("UserID")]
-        public User user { get; set; }
+        public User User { get; set; }
 
         public ICollection<Payment>  Payments { get; set; }
     }
